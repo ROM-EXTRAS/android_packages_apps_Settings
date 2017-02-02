@@ -202,4 +202,6 @@
     <string name="show_pulse_title">Show Pulse</string>
     <string name="smoothing_enabled_summary">Each bar is animated more smoothly</string>
     <string name="smoothing_enabled_title">Turn on smoothing</string>
+
+    <string name="background_processes_settings_title">Background processes</string>
 </resources>
