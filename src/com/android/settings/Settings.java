@@ -489,4 +489,7 @@ public class Settings extends SettingsActivity {
 
     /** Activity for the Reset mobile network settings. */
     public static class ResetMobileNetworkSettingsActivity extends SettingsActivity { /* empty */ }
+
+    public static class crDroidSettingsLayoutActivity extends SettingsActivity {}
+  
 }
