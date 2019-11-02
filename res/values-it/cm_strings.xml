@@ -137,4 +137,10 @@
     <string name="lockscreen_media_blur_title">Livello blur media art</string>
     <string name="show_lockscreen_media_art_title">Mostra media art</string>
     <string name="lockscreen_media_art_options_title">Media art losckreen</string>
+
+    <string name="ambient_wake_gestures_title">Risveglia su Ambient</string>
+    <string name="ambient_wake_gestures_summary">Mostra l\'Ambient Display invece della lockscreen con le wake gesture</string>
+
+    <string name="pulse_on_new_tracks_title">Ticker musica Ambient</string>
+    <string name="pulse_on_new_tracks_summary">Mostra l\'Ambient Display quando una nuova traccia viene riprodotta. Doppio tap sulla traccia per passare alla successiva.</string>
 </resources>
