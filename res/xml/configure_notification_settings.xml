@@ -104,7 +104,7 @@
     <PreferenceCategory
         android:key="configure_notifications_advanced"
         android:order="15"
-        settings:initialExpandedChildrenCount="0">
+        settings:initialExpandedChildrenCount="100">
 
         <com.lineageos.support.preferences.SystemSettingSwitchPreference
             android:key="less_boring_heads_up"
