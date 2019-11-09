@@ -93,7 +93,6 @@
     <string name="fast_charging_title">Ricarica rapida</string>
     <string name="fast_charging_summary">Disabilita per ridurre il calore prodotto dal dispositivo durante la carica o per prolungare la durata della batteria</string>
 
-
     <!-- Pulse -->
     <string name="pulse_help_policy_notice_summary">Pulse non funziona con alcune sorgenti audio durante la riproduzione via altoparlante</string>
     <string name="pulse_cat_title">Equalizzatore Pulse</string>
@@ -138,4 +137,7 @@
 
     <string name="pulse_on_new_tracks_title">Ticker musica Ambient</string>
     <string name="pulse_on_new_tracks_summary">Mostra l\'Ambient Display quando una nuova traccia viene riprodotta. Doppio tap sulla traccia per passare alla successiva.</string>
+
+    <string name="less_boring_heads_up_title">Heads up meno insistenti</string>
+    <string name="less_boring_heads_up_summary">Disattiva velocemente tutte le heads up tranne che per Telefono e Messaggi</string>
 </resources>
