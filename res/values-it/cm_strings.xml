@@ -145,4 +145,7 @@
 
     <string name="less_boring_heads_up_title">Heads up meno insistenti</string>
     <string name="less_boring_heads_up_summary">Disattiva velocemente tutte le heads up tranne che per Telefono e Messaggi</string>
+
+    <string name="doze_on_charge_title">Always On in carica</string>
+    <string name="doze_on_charge_summary">Mostra l\'Ambient display durante la carica</string>
 </resources>
