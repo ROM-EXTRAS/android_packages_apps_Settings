@@ -88,6 +88,7 @@ android_library {
         "securebox",
         "//frameworks/libs/systemui:com_android_systemui_shared_flags_lib",
         "WindowManager-Shell-shared-desktopMode",
+        "glide",
 
         // Settings dependencies
         "FingerprintManagerInteractor",
@@ -177,6 +178,11 @@ android_app {
 android_library_import {
     name: "contextualcards",
     aars: ["libs/contextualcards.aar"],
+}
+
+android_library_import {
+    name: "glide",
+    aars: ["libs/glide-4.16.0.aar"],
 }
 
 filegroup {
