@@ -85,6 +85,7 @@ android_library {
         "net-utils-framework-common",
         "notification_flags_lib",
         "securebox",
+        "glide",
 
         // Settings dependencies
         "FingerprintManagerInteractor",
@@ -168,6 +169,11 @@ android_app {
 android_library_import {
     name: "contextualcards",
     aars: ["libs/contextualcards.aar"],
+}
+
+android_library_import {
+    name: "glide",
+    aars: ["libs/glide-4.16.0.aar"],
 }
 
 filegroup {
