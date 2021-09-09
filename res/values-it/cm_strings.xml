@@ -54,6 +54,7 @@
     <string name="lockpattern_settings_enable_error_path_title">Mostra sequenza errata</string>
     <string name="lockpattern_settings_enable_dots_title">Mostra punti sequenza</string>
     <string name="lockscreen_media_art_title">Mostra copertina album</string>
+    <string name="lockscreen_media_art_summary">Mostra le album art nella lockscreen durante la riproduzione musicale</string>
     <string name="lockscreen_visualizer_title">Mostra visualizzatore musicale</string>
     <string name="min_refresh_rate_title">Frequenza di aggiornamento minima</string>
     <string name="show_navbar_hint_title">Indicatore navigazione</string>
