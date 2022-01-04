@@ -222,6 +222,7 @@
     <!-- Volume link notification -->
     <string name="volume_link_notification_title">Link ring &amp; notification volumes</string>
 
-    <!-- Cloudflare DNS Option -->
+    <!-- Private DNS Providers -->
     <string name="private_dns_mode_cloudflare" translatable="false">Cloudflare DNS</string>
+    <string name="private_dns_mode_adguard" translatable="false">AdGuard DNS</string>
 </resources>
