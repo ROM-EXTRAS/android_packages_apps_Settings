@@ -24,7 +24,10 @@ import android.content.Context;
 import android.database.ContentObserver;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
+import android.os.Handle;
+import android.os.IBinder;
+import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.provider.Settings.Global;
@@ -49,6 +52,8 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 import com.android.settingslib.widget.LayoutPreference;
 
+import ink.kaleidoscope.hardware.IOptimizedCharge;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -70,6 +75,7 @@ public class PowerUsageSummary extends PowerUsageBase implements
     static final String KEY_BATTERY_ERROR = "battery_help_message";
     @VisibleForTesting
     static final String KEY_BATTERY_USAGE = "battery_usage_summary";
+    static final String KEY_OPTIMIZED_CHARGE = "optimized_charge_enabled";
 
     private static final String KEY_BATTERY_TEMP = "battery_temperature";
     private static final String KEY_CURRENT_BATTERY_CAPACITY = "current_battery_capacity";
@@ -80,6 +86,9 @@ public class PowerUsageSummary extends PowerUsageBase implements
     static final int BATTERY_INFO_LOADER = 1;
     @VisibleForTesting
     static final int BATTERY_TIP_LOADER = 2;
+
+    static final IOptimizedCharge sOptimizedCharge =
+        IOptimizedCharge.Stub.asInterface(ServiceManager.getService("optimizedcharge"));
 
     @VisibleForTesting
     PowerGaugePreference mBatteryTempPref;
@@ -213,6 +222,9 @@ public class PowerUsageSummary extends PowerUsageBase implements
         }
         mBatteryTipPreferenceController.restoreInstanceState(icicle);
         updateBatteryTipFlag(icicle);
+
+        if (!isOptimizedChargeSupported())
+            removePreference(KEY_OPTIMIZED_CHARGE);
     }
 
     @Override
@@ -413,6 +425,14 @@ public class PowerUsageSummary extends PowerUsageBase implements
         }
     }
 
+    static boolean isOptimizedChargeSupported() {
+        try {
+            return sOptimizedCharge.isSupported();
+        } catch (RemoteException e) {
+            return false;
+        }
+    }
+
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.power_usage_summary) {
 
@@ -425,7 +445,8 @@ public class PowerUsageSummary extends PowerUsageBase implements
                         keys.add(KEY_DESIGNED_BATTERY_CAPACITY);
                         keys.add(KEY_BATTERY_CHARGE_CYCLES);
                     }
-
+                    if (!isOptimizedChargeSupported())
+                        keys.add(KEY_OPTIMIZED_CHARGE);
                     return keys;
                 }
     };
