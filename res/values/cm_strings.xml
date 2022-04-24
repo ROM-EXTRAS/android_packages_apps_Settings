@@ -203,6 +203,8 @@
     <string name="pulse_solid_lines_count">Solid lines count</string>
     <string name="pulse_solid_units_count">Solid lines count</string>
     <string name="pulse_solid_units_opacity">Solid lines opacity</string>
+    <string name="show_ambient_pulse_title">Ambient Pulse</string>
+    <string name="show_ambient_pulse_summary">Audio graphic equalizer on the ambient screen</string>
     <string name="show_lockscreen_pulse_summary">Audio graphic equalizer on the lockscreen</string>
     <string name="show_lockscreen_pulse_title">Lockscreen Pulse</string>
     <string name="show_navbar_pulse_summary">Audio graphic equalizer on the navigation bar area, also if bar is hidden</string>
