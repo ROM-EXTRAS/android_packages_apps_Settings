@@ -24,7 +24,6 @@ import android.provider.Settings;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 
-import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -36,6 +35,7 @@ import com.lineageos.support.preferences.CustomSeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.lineageos.internal.logging.LineageMetricsLogger;
 
 /**
  * Settings screen for Smart charging
@@ -85,7 +85,7 @@ public class SmartChargingSettings extends DashboardFragment implements OnPrefer
 
     @Override
     public int getMetricsCategory() {
-        return MetricsEvent.ARROW;
+        return LineageMetricsLogger.ANONYMOUS_STATS;
     }
 
     @Override
