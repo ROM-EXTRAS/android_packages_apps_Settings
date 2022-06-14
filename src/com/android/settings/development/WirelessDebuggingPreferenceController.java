@@ -137,9 +137,9 @@ public class WirelessDebuggingPreferenceController extends DeveloperOptionsPrefe
     }
 
     /**
-     * Returns true if connected to Wi-Fi network.
+     * Returns true if connected to Ethernet or Wi-Fi network.
      */
-    public static boolean isWifiConnected(Context context) {
+    public static boolean isLanConnected(Context context) {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(
                 Context.CONNECTIVITY_SERVICE);
         if (cm == null) {
@@ -150,7 +150,8 @@ public class WirelessDebuggingPreferenceController extends DeveloperOptionsPrefe
             if (nc == null) {
                 continue;
             }
-            if (nc.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)) {
+            if (nc.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
+                    nc.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)) {
                 return true;
             }
         }
@@ -160,10 +161,10 @@ public class WirelessDebuggingPreferenceController extends DeveloperOptionsPrefe
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         final boolean enabled = (Boolean) newValue;
-        if (enabled && !isWifiConnected(mContext)) {
-            // Cannot enable ADB over Wi-Fi if we're not connected to wifi.
+        if (enabled && !isLanConnected(mContext)) {
+            // Cannot enable ADB over network if we're not connected to wifi or ethernet.
             Toast.makeText(
-                    mContext, R.string.adb_wireless_no_network_msg, Toast.LENGTH_LONG)
+                    mContext, R.string.adb_lan_no_network_msg, Toast.LENGTH_LONG)
                     .show();
             return false;
         }

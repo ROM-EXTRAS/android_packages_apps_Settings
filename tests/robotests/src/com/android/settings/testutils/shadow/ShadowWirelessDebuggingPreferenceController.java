@@ -25,18 +25,18 @@ import org.robolectric.annotation.Implements;
 
 @Implements(WirelessDebuggingPreferenceController.class)
 public class ShadowWirelessDebuggingPreferenceController {
-    private static boolean sIsWifiConnected;
+    private static boolean sIsLanConnected;
 
-    public static void setIsWifiConnected(boolean isConnected) {
-        sIsWifiConnected = isConnected;
+    public static void setIsLanConnected(boolean isConnected) {
+        sIsLanConnected = isConnected;
     }
 
     public static void reset() {
-        sIsWifiConnected = false;
+        sIsLanConnected = false;
     }
 
     @Implementation
-    protected static boolean isWifiConnected(Context context) {
-        return sIsWifiConnected;
+    protected static boolean isLanConnected(Context context) {
+        return sIsLanConnected;
     }
 }
