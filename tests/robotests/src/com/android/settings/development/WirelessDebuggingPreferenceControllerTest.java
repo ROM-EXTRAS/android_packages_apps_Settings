@@ -116,7 +116,7 @@ public class WirelessDebuggingPreferenceControllerTest {
 
     @Test
     public void onPreferenceChange_turnOn_wifiConnected_adbWifiEnabledTrue() {
-        ShadowWirelessDebuggingPreferenceController.setIsLanConnected(true);
+        ShadowWirelessDebuggingPreferenceController.setIsWifiConnected(true);
         mController.onPreferenceChange(null, true);
 
         assertThat(Global.getInt(mContentResolver, Global.ADB_WIFI_ENABLED, -1)).isEqualTo(1);
@@ -124,7 +124,7 @@ public class WirelessDebuggingPreferenceControllerTest {
 
     @Test
     public void onPreferenceChange_turnOff_wifiConnected_adbWifiEnabledFalse() {
-        ShadowWirelessDebuggingPreferenceController.setIsLanConnected(true);
+        ShadowWirelessDebuggingPreferenceController.setIsWifiConnected(true);
         mController.onPreferenceChange(null, false);
 
         assertThat(Global.getInt(mContentResolver, Global.ADB_WIFI_ENABLED, -1)).isEqualTo(0);
@@ -133,7 +133,7 @@ public class WirelessDebuggingPreferenceControllerTest {
     @Test
     public void onPreferenceChange_turnOn_wifiNotConnected_adbWifiEnabledFalse() {
         // Should not be able to enable wifi debugging without being connected to a wifi network
-        ShadowWirelessDebuggingPreferenceController.setIsLanConnected(false);
+        ShadowWirelessDebuggingPreferenceController.setIsWifiConnected(false);
         mController.onPreferenceChange(null, true);
 
         assertThat(Global.getInt(mContentResolver, Global.ADB_WIFI_ENABLED, -1)).isEqualTo(0);
@@ -141,7 +141,7 @@ public class WirelessDebuggingPreferenceControllerTest {
 
     @Test
     public void onPreferenceChange_turnOff_wifiNotConnected_adbWifiEnabledFalse() {
-        ShadowWirelessDebuggingPreferenceController.setIsLanConnected(false);
+        ShadowWirelessDebuggingPreferenceController.setIsWifiConnected(false);
         mController.onPreferenceChange(null, false);
 
         assertThat(Global.getInt(mContentResolver, Global.ADB_WIFI_ENABLED, -1)).isEqualTo(0);

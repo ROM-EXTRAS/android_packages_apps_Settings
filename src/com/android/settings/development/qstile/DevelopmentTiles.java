@@ -408,7 +408,7 @@ public abstract class DevelopmentTiles extends TileService {
             mContext = getApplicationContext();
             mKeyguardManager = (KeyguardManager) mContext.getSystemService(
                     Context.KEYGUARD_SERVICE);
-            mToast = Toast.makeText(mContext, R.string.adb_lan_no_network_msg,
+            mToast = Toast.makeText(mContext, R.string.adb_wireless_no_network_msg,
                     Toast.LENGTH_LONG);
         }
 
@@ -439,7 +439,7 @@ public abstract class DevelopmentTiles extends TileService {
             }
 
             // Show error toast if not connected to Wi-Fi
-            if (isEnabled && !WirelessDebuggingPreferenceController.isLanConnected(mContext)) {
+            if (isEnabled && !WirelessDebuggingPreferenceController.isWifiConnected(mContext)) {
                 // Close quick shade
                 sendBroadcast(new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS));
                 mToast.show();
