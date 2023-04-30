@@ -491,5 +491,5 @@ public class Settings extends SettingsActivity {
     public static class ResetMobileNetworkSettingsActivity extends SettingsActivity { /* empty */ }
 
     public static class crDroidSettingsLayoutActivity extends SettingsActivity {}
-  
+    public static class SmartPixelsActivity extends SettingsActivity {}
 }
