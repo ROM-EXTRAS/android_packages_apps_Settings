@@ -161,4 +161,8 @@ public class BatteryHeaderPreferenceController extends BasePreferenceController
     private CharSequence formatBatteryChargeCounterText(int chargeCounter) {
         return mContext.getString(R.string.battery_charge_counter_summary, chargeCounter);
     }
+
+    public static String getBatteryHeaderKey() {
+        return KEY_BATTERY_HEADER;
+    }
 }
