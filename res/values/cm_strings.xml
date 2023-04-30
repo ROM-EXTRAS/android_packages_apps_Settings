@@ -205,4 +205,7 @@
     <!-- More info for installed apps -->
     <string name="app_info_install_time">Installed: %1$s</string>
     <string name="app_info_update_time">Updated: %1$s</string>
+
+    <!-- Battery temperature -->
+    <string name="battery_temperature">Battery temperature</string>
 </resources>
