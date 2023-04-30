@@ -185,4 +185,8 @@ public class BatteryHeaderPreferenceController extends BasePreferenceController
         return TextUtils.expandTemplate(mContext.getText(R.string.battery_header_title_alternate),
                 NumberFormat.getIntegerInstance().format(batteryLevel));
     }
+
+    public static String getBatteryHeaderKey() {
+        return KEY_BATTERY_HEADER;
+    }
 }
