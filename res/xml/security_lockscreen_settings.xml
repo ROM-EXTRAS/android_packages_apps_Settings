@@ -48,6 +48,8 @@
         <lineageos.preference.LineageSecureSettingSwitchPreference
             android:key="lockscreen_media_metadata"
             android:title="@string/lockscreen_media_art_title"
+            android:summary="@string/media_art_summary"
+            android:icon="@drawable/ic_movie"
             android:defaultValue="false" />
 
         <com.lineageos.support.preferences.SystemSettingListPreference
