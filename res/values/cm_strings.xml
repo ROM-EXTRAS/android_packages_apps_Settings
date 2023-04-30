@@ -202,6 +202,10 @@
     <string name="app_info_install_time">Installed: %1$s</string>
     <string name="app_info_update_time">Updated: %1$s</string>
 
+    <!-- Battery health -->
+    <string name="current_battery_capacity">Current battery capacity</string>
+    <string name="designed_battery_capacity">Designed battery capacity</string>
+
     <!-- Battery temperature -->
     <string name="battery_temperature">Battery temperature</string>
 </resources>
