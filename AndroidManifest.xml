@@ -144,6 +144,8 @@
     <uses-permission android:name="android.permission.RESTART_PHONE_PROCESS" />
     <uses-permission android:name="android.permission.MANAGE_ENHANCED_CONFIRMATION_STATES" />
 
+    <protected-broadcast android:name="com.android.systemui.doze.pulse" />
+
     <application
             android:name=".SettingsApplication"
             android:label="@string/settings_label"
@@ -5182,5 +5184,16 @@
             <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED"
                        android:value="true" />
         </activity>
+        <receiver android:name="com.crdroid.settings.fragments.ui.doze.DozeReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.crdroid.settings.fragments.ui.doze.DozeService"
+                android:exported="true"
+                android:permission="crDroidDozeService">
+        </service>
     </application>
 </manifest>
