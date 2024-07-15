@@ -139,23 +139,23 @@ public class PrivateDnsPreferenceController extends BasePreferenceController
             case PRIVATE_DNS_MODE_CLOUDFLARE:
                 return dnsesResolved
                         ? res.getString(R.string.private_dns_mode_cloudflare)
-                        : res.getString(R.string.private_dns_mode_provider_failure);
+                        : res.getString(com.android.settingslib.R.string.private_dns_mode_provider_failure);
             case PRIVATE_DNS_MODE_ADGUARD:
                 return dnsesResolved
                         ? res.getString(R.string.private_dns_mode_adguard)
-                        : res.getString(R.string.private_dns_mode_provider_failure);
+                        : res.getString(com.android.settingslib.R.string.private_dns_mode_provider_failure);
             case PRIVATE_DNS_MODE_OPEN_DNS:
                 return dnsesResolved
                         ? res.getString(R.string.private_dns_mode_open_dns)
-                        : res.getString(R.string.private_dns_mode_provider_failure);
+                        : res.getString(com.android.settingslib.R.string.private_dns_mode_provider_failure);
             case PRIVATE_DNS_MODE_CLEANBROWSING:
                 return dnsesResolved
                         ? res.getString(R.string.private_dns_mode_cleanbrowsing)
-                        : res.getString(R.string.private_dns_mode_provider_failure);
+                        : res.getString(com.android.settingslib.R.string.private_dns_mode_provider_failure);
             case PRIVATE_DNS_MODE_QUAD9:
                 return dnsesResolved
                         ? res.getString(R.string.private_dns_mode_quad9)
-                        : res.getString(R.string.private_dns_mode_provider_failure);
+                        : res.getString(com.android.settingslib.R.string.private_dns_mode_provider_failure);
             case PRIVATE_DNS_MODE_OPPORTUNISTIC:
                 return dnsesResolved ? res.getString(R.string.private_dns_mode_on)
                         : res.getString(
