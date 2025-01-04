@@ -36,6 +36,12 @@
             android:fragment="com.android.settings.notification.LockScreenNotificationsPreferencePageFragment"
             settings:controller="com.android.settings.notification.LockScreenNotificationsPreferencePageController" />
 
+        <com.android.settingslib.RestrictedSwitchPreference
+            android:key="enable_glanceable_hub_toggle"
+            android:title="@string/enable_glanceable_hub_toggle"
+            android:summary="@string/enable_glanceable_hub_toggle_summary"
+            settings:controller="com.google.android.settings.communal.GlanceableHubTogglePreferenceController"/>
+
         <SwitchPreferenceCompat
             android:key="security_display_lockscreen_bypass"
             android:title="@string/lockscreen_bypass_title"
